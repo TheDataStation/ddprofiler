@@ -16,9 +16,10 @@ start-catalog-service:
 	# Start gunicorn service here
 	# TODO start via docker.
 
+.PHONY: profile-chemball.yml
 profile-chemball.yml:
-	$(DDPROFILER) --sources ./chemball.yml --catalog_uri "https://localhost:5000"
-	$(NETWORK_BUILDER) --sources ./chemball.yml --catalog_uri "https://localhost:5000"
+	$(DDPROFILER) --sources ./chemball.yml #--catalog_uri "https://localhost:5000"
+	#$(NETWORK_BUILDER) --sources ./chemball.yml #--catalog_uri "https://localhost:5000"
 
 profile-chemball-mini.yml:
 	# Removed public.activities.csv public.compound_structures.csv
@@ -34,3 +35,5 @@ clean:
  	#
 	- docker stop $(ES_CONTAINER) $(KIBANA_CONTAINER)
 	- docker rm $(ES_CONTAINER) $(KIBANA_CONTAINER)
+
+demo: clean build profile-chemball.yml
