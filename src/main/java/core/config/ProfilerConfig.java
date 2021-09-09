@@ -63,9 +63,10 @@ public class ProfilerConfig extends Config {
 		.define(WEB_SERVER_PORT, Type.INT, 8080, Importance.MEDIUM, WEB_SERVER_PORT_DOC)
 		.define(NUM_POOL_THREADS, Type.INT, 4, Importance.LOW, NUM_POOL_THREADS_DOC)
 		.define(NUM_RECORD_READ, Type.INT, 1000, Importance.MEDIUM, NUM_RECORD_READ_DOC)
-		.define(STORE_TYPE, Type.INT, 2, Importance.MEDIUM, STORE_TYPE_DOC)
+		//.define(STORE_TYPE, Type.INT, 2, Importance.MEDIUM, STORE_TYPE_DOC)
+            .define(STORE_TYPE, Type.INT, 3, Importance.MEDIUM, STORE_TYPE_DOC)
 		.define(STORE_SERVER, Type.STRING, "127.0.0.1", Importance.HIGH, STORE_SERVER_DOC)
-		.define(STORE_HTTP_PORT, Type.INT, 9200, Importance.HIGH, STORE_HTTP_PORT_DOC)
+		.define(STORE_HTTP_PORT, Type.INT, 8000, Importance.HIGH, STORE_HTTP_PORT_DOC)
 		.define(STORE_PORT, Type.INT, 9300, Importance.HIGH, STORE_PORT_DOC)
 		.define(ERROR_LOG_FILE_NAME, Type.STRING, "error_profiler.log", Importance.MEDIUM,
 			ERROR_LOG_FILE_NAME_DOC)
